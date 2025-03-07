@@ -1,29 +1,90 @@
-# Build a Semantic Book Recommender with LLMs – Full Course
+# 📚 Semantic Book Recommender with LLMs
 
-This repo contains all of the code to complete the freeCodeCamp course, "Build a Semantic Book Recommender with LLMs – Full Course". There are five components to this tutorial:
-* Text data cleaning (code in the notebook `data-exploration.ipynb`)
-* Semantic (vector) search and how to build a vector database (code in the notebook `vector-search.ipynb`). This allows users to find the most similar books to a natural language query (e.g., "a book about a person seeking revenge").
-* Doing text classification using zero-shot classification in LLMs (code in the notebook `text-classification.ipynb`). This allows us to classify the books as "fiction" or "non-fiction", creating a facet that users can filter the books on. 
-* Doing sentiment analysis using LLMs and extracting the emotions from text (code in the notebook `sentiment-analysis.ipynb`). This will allow users to sort books by their tone, such as how suspenseful, joyful or sad the books are.
-* Creating a web application using Gradio for users to get book recommendations (code in the file `gradio-dashboard.py`).
+This repository contains the complete code for my **Semantic Book Recommender** project. The system leverages **large language models (LLMs)** and **vector search** to provide intelligent book recommendations based on natural language queries.
 
-This project was initially created in Python 3.11. In order to run the project, the following dependencies are required:
-* [kagglehub](https://pypi.org/project/kagglehub/)
-* [pandas](https://pypi.org/project/pandas/)
-* [matplotlib](https://pypi.org/project/matplotlib/)
-* [seaborn](https://pypi.org/project/seaborn/)
-* [python-dotenv](https://pypi.org/project/python-dotenv/)
-* [langchain-community](https://pypi.org/project/langchain-community/)
-* [langchain-opencv](https://pypi.org/project/langchain-opencv/)
-* [langchain-chroma](https://pypi.org/project/langchain-chroma/)
-* [transformers](https://pypi.org/project/transformers/)
-* [gradio](https://pypi.org/project/gradio/)
-* [notebook](https://pypi.org/project/notebook/)
-* [ipywidgets](https://pypi.org/project/ipywidgets/)
+---
 
-A requirements.txt file containing all the project dependencies is provided as part of this repo.
+## 🌟 Project Overview
 
-In order to create your vector database, you'll need to create a .env file in your root directory containing your OpenAI API key. Instructions on how to do this are part of the tutorial.
+This project consists of five key components:
 
-The data for this project can be downloaded from Kaggle. Instructions on how to do this are also in the repo.
+### 1️⃣ Text Data Cleaning
+- **Code:** [`data-exploration.ipynb`](data-exploration.ipynb)
+- Prepares and cleans book descriptions to improve recommendation accuracy.
+
+### 2️⃣ Semantic Search & Vector Database
+- **Code:** [`vector-search.ipynb`](vector-search.ipynb)
+- Uses **vector search** to find books based on user queries (e.g., *"a book about a person seeking revenge"*).
+
+### 3️⃣ Zero-Shot Text Classification
+- **Code:** [`text-classification.ipynb`](text-classification.ipynb)
+- Classifies books as **fiction** or **non-fiction** to allow filtering.
+
+### 4️⃣ Sentiment Analysis & Emotion Extraction
+- **Code:** [`sentiment-analysis.ipynb`](sentiment-analysis.ipynb)
+- Determines book tone (e.g., **suspenseful, joyful, sad**) to enhance sorting options.
+
+### 5️⃣ Gradio Web Application
+- **Code:** [`gradio-dashboard.py`](gradio-dashboard.py)
+- Provides a user-friendly interface for book recommendations.
+
+---
+
+## ⚙️ Installation & Setup
+
+This project was developed with **Python 3.11**. Follow these steps to set up your environment:
+
+### 🔹 1. Install Dependencies
+Clone the repository and install dependencies using `requirements.txt`:
+```bash
+pip install -r requirements.txt
+```
+Alternatively, install key dependencies manually:
+```bash
+pip install kagglehub pandas matplotlib seaborn python-dotenv \
+    langchain-community langchain-opencv langchain-chroma \
+    transformers gradio notebook ipywidgets
+```
+
+### 🔹 2. Set Up API Keys
+This project requires API keys for **OpenAI** and **Google Books**.
+
+#### 🟢 OpenAI API Key
+To create the **vector database**, add your **OpenAI API key** in a `.env` file:
+```bash
+echo "OPENAI_API_KEY=your_api_key_here" > .env
+```
+
+#### 🔵 Google Books API Key
+To fetch book data, add your **Google Books API key** in the `.env` file:
+```bash
+echo "GOOGLE_BOOKS_API_KEY=your_google_books_api_key_here" >> .env
+```
+You can get a Google Books API key from [Google Cloud Console](https://console.cloud.google.com/).
+
+### 🔹 3. Download the Dataset
+The dataset for this project is available on **Kaggle**. Detailed instructions on how to download and use it are provided in the repository.
+
+---
+
+## 🚀 Running the Project
+To start the **Gradio web app**, execute the following command:
+```bash
+python gradio-dashboard.py
+```
+This will launch a web-based interface for book recommendations.
+
+---
+
+## 🛠 Technologies Used
+- **Python** – Data processing & ML workflows
+- **Hugging Face Transformers** – LLM-based text embeddings
+- **ChromaDB** – Vector search database
+- **Gradio** – Interactive UI for book recommendations
+- **OpenAI API** – LLM-powered processing
+- **Google Books API** – Fetching book details
+
+Feel free to explore and contribute to this project. Happy coding! 🚀📚
+
+
 
